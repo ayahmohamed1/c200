@@ -1,0 +1,89 @@
+// ============================================================
+// 🎁 GIFT DATA — EDIT HERE to add or change customer content
+// ============================================================
+// Each key is the URL slug: /gift/aya → id = "aya"
+// ============================================================
+
+export interface GiftData {
+  name: string;           // Shown in the intro "Make a wish, [name]!"
+  senderName?: string;    // Signature at the bottom of the letter (e.g., "Aya ✨")
+  envelopeImage: string;  // Path inside /public — the envelope image
+  birthdayImage: string;  // Path inside /public — the main birthday card image
+  message: string;        // The first birthday message (supports \n for line breaks)
+  message2?: string;      // The second message before the second song
+  musicUrl?: string;      // Optional: URL to a background music mp3
+  accentColor?: string;   // Optional: custom accent color
+  photos?: string[];      // Optional: list of photos for the memories screen
+  passcode?: string;      // Optional: password protection for the gift
+  songTitle?: string;     // Title of the song on the music player
+  songArtist?: string;    // Artist of the song
+  songCover?: string;     // Cover image for the song card
+  songSrc?: string;       // Audio file path
+}
+
+// ============================================================
+// CUSTOMER DATA
+// ============================================================
+const giftData: Record<string, GiftData> = {
+
+  // ----------------------------------------------------------
+  // CUSTOMER: Ayah & وليدك
+  // Link: yourdomain.com/gift/ayah or yourdomain.com/gift/aya
+  // ----------------------------------------------------------
+  aya: {
+    name: "",                                        // اسم مستلم الهدية
+    senderName: "your love",                            // التوقيع في آخر الرسالة (اختياري)
+    envelopeImage: "/images/envelope-aya.png",           // صورة الظرف
+    birthdayImage: "/images/birthday-aya.png",           // صورة الهدية النهائية
+    accentColor: "#9ca3af",                              // اللون الرصاصي
+    musicUrl: "",                                        // رابط الموسيقى هنا
+    passcode: "OnlyYou",                                 // الباسورد لفتح الهدية
+    photos: [
+      "/images/pic1.jpg",
+      "/images/pic2.jpg",
+      "/images/pic3.jpg",
+      "/images/pic4.jpg"
+    ],
+    songTitle: "Our Special Song",                       // اسم الأغنية
+    songArtist: "For You",                               // اسم المغنية / الفنان
+    songCover: "/images/pic5.jpg",                       // صورة غلاف الأغنية
+    songSrc: "/audio/song.mp3",                          // مسار ملف الأغنية
+
+    // الرسالة
+    message: `حبيبي 
+حقك عليا ي حبيب عيوني زعلك مهانش عليا و عمره م يهون احنا مش عشرة يوم و لا شهر احنا بينا عمر ف مش سهل عليا انسى كل ده و اعديه انا عايزاك تدي فرصه أن الزعل اللي بينا ده يخلص و انا هصلح اللي عملته و عارفه اني قولت كده كتير و معملتش بس صدقني مكنش في حاجه فيها اني بتخطاك أو اني بستهون زعلك و الله عمرها ف أنا اسفه و هحاول تاني اني معيدش غلطاتي و لا اعمل غلطات تانيه و هحاول تاني افكر قبل م اتصرف و لو لقيت حاجه هتزعلك مش هعملها متفكرش اني حبي ليك قل و لا انك مبقتش مهم عندي و مبفكرش فيك و الكلام ده ربنا يعلم مكانك عندي ايه و انت مصيرك تفهم ف ربنا م يبعدنا عن بعض و نكون دايما أحسن و أحسن 
+
+Love you very much koky`,
+  },
+  ayah: {
+    name: "you",
+    senderName: "your love",
+    envelopeImage: "/images/envelope-aya.png",
+    birthdayImage: "/images/birthday-aya.png",
+    accentColor: "#9ca3af",
+    musicUrl: "",
+    passcode: "OnlyYou",
+    photos: [
+      "/images/pic1.jpg",
+      "/images/pic2.jpg",
+      "/images/pic3.jpg",
+      "/images/pic4.jpg"
+    ],
+    songTitle: "Our Special Song",
+    songArtist: "For You",
+    songCover: "/images/pic5.jpg",
+    songSrc: "/audio/song.mp3",
+    message: `روريتي، قبل كلشي حقوله، في شغلة بدي اوصلك اياها صح هالمرة. انا طول الوقت كنت مفكر اني يوم اتجنب الخلاف، او دغري اعتذر، او احاول اسكر المشكلة بسرعة، اني هيك قاعد احمي علاقتنا وما بخلي الزعل يكبر او يطول بيننا، وكنت مفكر اني قاعد اعمل الشي الصح. وسبب هالشي اني كنت بخاف من زعلك ومن انو نوصل لمكان نحس فيه انو احنا ضد بعض، فكنت دايما ادور عاسرع طريق يرجعنا كويسين مع بعض. بس يلي ما كنت منتبهله انو بهالطريقة انا ما كنت احل المشكلة، كنت بس اعديها او اتجنبها. وهالشي خلاني استوعب ليش احيانا الشغلات بتضل ببالك حتى بعد ما نهدى، لاني انا كنت افكر انو دام اعتذرت وتسكر الموضوع وقتها يعني خلص انحل، بينما كان بعده عندك كلام او شعور ما اخذ حقه مني ولا قدرت افهمه وقتها من جهتك.
+
+وهسه عرفت انو مو كل خلاف لازم اخاف منه او استعجل لانهيه. احيانا عشان نحافظ علينا وععلاقتنا لازم نقعد نناقش ونفهم بعض حتى لو اخذ منا هالشي وقت. والي ما بدي اياه من كل هالاشياء يلي صارت بيننا انها تكون مجرد درس الي اخذه معي لقدام. انا بدي اياكي تكوني الشخص يلي بشوف الفرق، وبدي كلشي لازم اغيره يكون معك انتي، مو يجي شخص ثاني بيوم ويستفيد من شي انا تعلمته من وجعك انتي.
+
+واكثر شي بتمناه من كل يلي صار، انك ترجعي تحسي انك بتقدري تيجي وتحكيلي اي شي بخطر عبالك مثل ما كنتي دايما تعملي، بدون ما تفكري كيف حستقبل كلامك او لو حيكبر الموضوع من اشي بسيط. لانه من احلى الاشياء يلي كانت بيننا انك كنتي تحكيلي كلشي، وانا ما بدي اخسر هالمكان عندك. بدي يضل عندك هالشعور انك بتقدري تجيلي باي شي.
+
+وبعيدا عن كلشي فهمته هالفترة، في شغلة صرت احسها اوضح من قبل والي هي انو وجودك بحياتي كان يخلي كلشي اسهل علي. مو لانك كنتي تعملي شي معين، بس بمجرد اني اعرف انك موجودة كنت احس انو اموري ماشية، وفي تيسير وتوفيق بالاشياء يلي بعملها. وهالفترة حاس بفرق كبير، لان نفس الشغلات يلي كنت بعملها وانا مرتاح، صرت احسها اثقل علي. ولاحظت قديش وجودك كان مأثر عتفاصيل حياتي، وكان هالشعور طبيعي عندي لدرجة اني ما كنت انتبه لقيمته كاملة الا لما يصير بينا هالبعد.
+
+ومع الوقت صرت بدون ما افكر حتى اي شي بصير معي بجي وبقلك اياه. سواء كان اشي مهم او مش مهم، صار في جزء مني تلقائيا بدو اياكي تعرفي، وكأن الاشي ما بكمل عندي الا لما يوصلك. ولما اقعد اتطلع عالخمس سنين ونص يلي مروا بيننا، بلاحظ انو في كثير شغلات لو مريت فيهم بدونك كنت حطلع منهم شخص ثاني. فلهيك يوم اقلك انك نور عيوني ودنيتي، ما بعتبرها مجرد كلام حب، لانه انتي فعلا كنتي النور بكثير مراحل ما كان فيها شي واضح❣️`,
+  },
+
+};
+
+export default giftData;
